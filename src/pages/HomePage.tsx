@@ -1,5 +1,6 @@
 import { RouterMachine } from '../Provider'
 
+// routes inside HOME_PAGE subrouter
 const routes = [
   {
     component: <div>FOLLOWING</div>,
@@ -21,7 +22,8 @@ const HomePage = () => {
   const state = RouterMachine.useSelector((state) => state.value)
 
   const handleTabClick = (id: string) => {
-    send({ type: 'OPEN_' + id, data: 'sdfsd' })
+    // Send an event to the machine, pass data as data
+    send({ type: 'OPEN_' + id, data: 'Some data' })
   }
 
   const pageId = state['HOME_PAGE']
